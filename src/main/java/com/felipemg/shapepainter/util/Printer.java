@@ -9,9 +9,9 @@ public final class Printer {
         throw new AssertionError("This class should not be instantiated");
     }
 
-    public static String printCharacterNTimes(int times, String character) {
+    public static String printCharacterNTimes(int n, String character) {
         StringBuilder builder = new StringBuilder();
-        for (int n = 1; n <= times; ++n) {
+        for (int times = 1; times <= n; ++times) {
             builder.append(printCharacter(character));
         }
         return builder.toString();

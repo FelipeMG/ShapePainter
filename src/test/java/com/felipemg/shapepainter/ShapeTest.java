@@ -37,4 +37,19 @@ public class ShapeTest {
         assertThat(Shape.square(3), is(String.format("***%n***%n***%n")));
     }
 
+    @Test
+    public void triangleOfSize1ShouldReturnOneAsterisk(){
+        assertThat(Shape.triangle(1), is(String.format("*%n")));
+    }
+
+    @Test
+    public void triangleOfSize2ShouldReturnTriangle(){
+        assertThat(Shape.triangle(2), is(String.format(" * %n***%n")));
+    }
+
+    @Test
+    public void triangleOfSize3ShouldReturnTriangle(){
+        assertThat(Shape.triangle(3), is(String.format("  *  %n *** %n*****%n")));
+    }
+
 }
