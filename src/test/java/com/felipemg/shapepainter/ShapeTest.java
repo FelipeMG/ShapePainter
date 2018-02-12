@@ -22,4 +22,19 @@ public class ShapeTest {
         assertThat(Shape.diamond(0), is(""));
     }
 
+    @Test
+    public void squareOfSize1ShouldReturnAnAsterisk(){
+        assertThat(Shape.square(1), is(String.format("*%n")));
+    }
+
+    @Test
+    public void squareOfSize2ShouldReturnAnAsterisk(){
+        assertThat(Shape.square(2), is(String.format("**%n**%n")));
+    }
+
+    @Test
+    public void squareOfSize3ShouldReturn3AnAsterisk(){
+        assertThat(Shape.square(3), is(String.format("***%n***%n***%n")));
+    }
+
 }
