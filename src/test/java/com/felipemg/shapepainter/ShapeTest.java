@@ -33,8 +33,8 @@ public class ShapeTest {
     }
 
     @Test
-    public void squareOfSize3ShouldReturn3AnAsterisk(){
-        assertThat(Shape.square(3), is(String.format("***%n***%n***%n")));
+    public void squareShouldReturnSquareOfSize3(){
+        assertThat(Shape.square(), is(String.format("***%n***%n***%n")));
     }
 
     @Test
@@ -48,8 +48,23 @@ public class ShapeTest {
     }
 
     @Test
-    public void triangleOfSize3ShouldReturnTriangle(){
-        assertThat(Shape.triangle(3), is(String.format("  *  %n *** %n*****%n")));
+    public void triangleShouldReturnTriangleOfSize3(){
+        assertThat(Shape.triangle(), is(String.format("  *  %n *** %n*****%n")));
+    }
+
+    @Test
+    public void diamondOfSize1ShouldReturnOneAsterisk(){
+        assertThat(Shape.diamond(1), is(String.format("*%n")));
+    }
+
+    @Test
+    public void diamondOfSize2ShouldReturnDiamondSize2(){
+        assertThat(Shape.diamond(2), is(String.format(" * %n***%n * %n")));
+    }
+
+    @Test
+    public void diamondShouldReturnDiamondSize3(){
+        assertThat(Shape.diamond(), is(String.format("  *  %n *** %n*****%n *** %n  *  %n")));
     }
 
 }
