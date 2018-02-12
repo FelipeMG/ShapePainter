@@ -3,9 +3,17 @@ package com.felipemg.shapepainter;
 import static org.junit.Assert.assertThat;
 import static org.hamcrest.CoreMatchers.is;
 
+import org.junit.Before;
 import org.junit.Test;
 
 public class ShapeTest {
+
+    private StringBuilder builder;
+
+    @Before
+    public void init(){
+        this.builder = new StringBuilder();
+    }
 
     @Test
     public void squareOfSize0ShouldReturnAnEmptyString(){
@@ -24,47 +32,101 @@ public class ShapeTest {
 
     @Test
     public void squareOfSize1ShouldReturnAnAsterisk(){
-        assertThat(Shape.square(1), is(String.format("*%n")));
+        builder.append("*").append(String.format("%n"));
+        assertThat(Shape.square(1), is(builder.toString()));
     }
 
     @Test
     public void squareOfSize2ShouldReturnAnAsterisk(){
-        assertThat(Shape.square(2), is(String.format("**%n**%n")));
+        builder.append("**").append(String.format("%n"));
+        builder.append("**").append(String.format("%n"));
+        assertThat(Shape.square(2), is(builder.toString()));
     }
 
     @Test
     public void squareShouldReturnSquareOfSize3(){
-        assertThat(Shape.square(), is(String.format("***%n***%n***%n")));
+        builder.append("***").append(String.format("%n"));
+        builder.append("***").append(String.format("%n"));
+        builder.append("***").append(String.format("%n"));
+        assertThat(Shape.square(), is(builder.toString()));
+    }
+
+    @Test
+    public void squareOfSize4ShouldReturnSquareOfSize4(){
+        builder.append("****").append(String.format("%n"));
+        builder.append("****").append(String.format("%n"));
+        builder.append("****").append(String.format("%n"));
+        builder.append("****").append(String.format("%n"));
+        assertThat(Shape.square(4), is(builder.toString()));
     }
 
     @Test
     public void triangleOfSize1ShouldReturnOneAsterisk(){
-        assertThat(Shape.triangle(1), is(String.format("*%n")));
+        builder.append("*").append(String.format("%n"));
+        assertThat(Shape.triangle(1), is(builder.toString()));
     }
 
     @Test
     public void triangleOfSize2ShouldReturnTriangle(){
-        assertThat(Shape.triangle(2), is(String.format(" * %n***%n")));
+        builder.append(" * ").append(String.format("%n"));
+        builder.append("***").append(String.format("%n"));
+        assertThat(Shape.triangle(2), is(builder.toString()));
     }
 
     @Test
     public void triangleShouldReturnTriangleOfSize3(){
-        assertThat(Shape.triangle(), is(String.format("  *  %n *** %n*****%n")));
+        builder.append("  *  ").append(String.format("%n"));
+        builder.append(" *** ").append(String.format("%n"));
+        builder.append("*****").append(String.format("%n"));
+        assertThat(Shape.triangle(), is(builder.toString()));
     }
 
     @Test
+    public void triangleOfSize4ShouldReturnTriangleOfSize4(){
+        builder.append("   *   ").append(String.format("%n"));
+        builder.append("  ***  ").append(String.format("%n"));
+        builder.append(" ***** ").append(String.format("%n"));
+        builder.append("*******").append(String.format("%n"));
+        assertThat(Shape.triangle(4), is(builder.toString()));
+    }
+
+
+
+
+    @Test
     public void diamondOfSize1ShouldReturnOneAsterisk(){
-        assertThat(Shape.diamond(1), is(String.format("*%n")));
+        builder.append("*").append(String.format("%n"));
+        assertThat(Shape.diamond(1), is(builder.toString()));
     }
 
     @Test
     public void diamondOfSize2ShouldReturnDiamondSize2(){
-        assertThat(Shape.diamond(2), is(String.format(" * %n***%n * %n")));
+        builder.append(" * ").append(String.format("%n"));
+        builder.append("***").append(String.format("%n"));
+        builder.append(" * ").append(String.format("%n"));
+        assertThat(Shape.diamond(2), is(builder.toString()));
     }
 
     @Test
     public void diamondShouldReturnDiamondSize3(){
-        assertThat(Shape.diamond(), is(String.format("  *  %n *** %n*****%n *** %n  *  %n")));
+        builder.append("  *  ").append(String.format("%n"));
+        builder.append(" *** ").append(String.format("%n"));
+        builder.append("*****").append(String.format("%n"));
+        builder.append(" *** ").append(String.format("%n"));
+        builder.append("  *  ").append(String.format("%n"));
+        assertThat(Shape.diamond(), is(builder.toString()));
+    }
+
+    @Test
+    public void diamondOfSize4ShouldReturnDiamondSize4(){
+        builder.append("   *   ").append(String.format("%n"));
+        builder.append("  ***  ").append(String.format("%n"));
+        builder.append(" ***** ").append(String.format("%n"));
+        builder.append("*******").append(String.format("%n"));
+        builder.append(" ***** ").append(String.format("%n"));
+        builder.append("  ***  ").append(String.format("%n"));
+        builder.append("   *   ").append(String.format("%n"));
+        assertThat(Shape.diamond(4), is(builder.toString()));
     }
 
 }
