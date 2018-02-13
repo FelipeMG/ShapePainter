@@ -127,4 +127,18 @@ public class ShapeTest {
         assertThat(Shape.diamond(4), is(builder.toString()));
     }
 
+    @Test
+    public void diamondOfSize5ShouldReturnDiamondSize5(){
+        builder.append("    *    ").append(Printer.NEW_LINE);
+        builder.append("   ***   ").append(Printer.NEW_LINE);
+        builder.append("  *****  ").append(Printer.NEW_LINE);
+        builder.append(" ******* ").append(Printer.NEW_LINE);
+        builder.append("*********").append(Printer.NEW_LINE);
+        builder.append(" ******* ").append(Printer.NEW_LINE);
+        builder.append("  *****  ").append(Printer.NEW_LINE);
+        builder.append("   ***   ").append(Printer.NEW_LINE);
+        builder.append("    *    ").append(Printer.NEW_LINE);
+        assertThat(Shape.diamond(5), is(builder.toString()));
+    }
+
 }
