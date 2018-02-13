@@ -18,11 +18,6 @@ public class PrinterTest {
     }
 
     @Test
-    public void printNewLineShouldReturnNewLineCharacter(){
-        assertThat(Printer.printNewLine(), is(String.format("%n")));
-    }
-
-    @Test
     public void print3AsterisksShouldReturn3Asterisks(){
         assertThat(Printer.printCharacterNTimes(3,"*"), is("***"));
     }

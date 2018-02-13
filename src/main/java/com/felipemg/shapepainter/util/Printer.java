@@ -4,6 +4,7 @@ public final class Printer {
 
     public static final String ASTERISK = "*";
     public static final String WHITE_SPACE = " ";
+    public static final String NEW_LINE = String.format("%n");
 
     private Printer(){
         throw new AssertionError("This class should not be instantiated");
@@ -19,10 +20,6 @@ public final class Printer {
 
     public static String printCharacter(String character){
         return character;
-    }
-
-    public static String printNewLine() {
-        return String.format("%n");
     }
 
 }

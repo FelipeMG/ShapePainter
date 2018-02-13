@@ -16,7 +16,7 @@ public final class Shape {
         StringBuilder builder = new StringBuilder();
         for (int rows = 1; rows <= size; ++rows) {
             builder.append(Printer.printCharacterNTimes(size,Printer.ASTERISK));
-            builder.append(Printer.printNewLine());
+            builder.append(Printer.NEW_LINE);
         }
         return builder.toString();
     }
@@ -33,7 +33,7 @@ public final class Shape {
             builder.append(Printer.printCharacterNTimes(spaces, Printer.WHITE_SPACE));
             builder.append(Printer.printCharacterNTimes(characters, Printer.ASTERISK));
             builder.append(Printer.printCharacterNTimes(spaces, Printer.WHITE_SPACE));
-            builder.append(Printer.printNewLine());
+            builder.append(Printer.NEW_LINE);
             --spaces;
             characters += 2;
         }
@@ -54,7 +54,7 @@ public final class Shape {
             builder.append(Printer.printCharacterNTimes(spaces, Printer.WHITE_SPACE));
             builder.append(Printer.printCharacterNTimes(characters, Printer.ASTERISK));
             builder.append(Printer.printCharacterNTimes(spaces, Printer.WHITE_SPACE));
-            builder.append(Printer.printNewLine());
+            builder.append(Printer.NEW_LINE);
             ++spaces;
             characters -= 2;
         }
