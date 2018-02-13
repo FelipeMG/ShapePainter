@@ -8,22 +8,12 @@ import org.junit.Test;
 public class PrinterTest {
 
     @Test
-    public void printCharacterAsteriskShouldReturnOneAsterisk(){
-        assertThat(Printer.printCharacter("*"), is("*"));
-    }
-
-    @Test
-    public void printCharacterSpaceShouldReturnOneSpace(){
-        assertThat(Printer.printCharacter(" "), is(" "));
-    }
-
-    @Test
     public void print3AsterisksShouldReturn3Asterisks(){
-        assertThat(Printer.printCharacterNTimes(3,"*"), is("***"));
+        assertThat(Printer.printCharacterNTimes('*', 3), is("***"));
     }
 
     @Test
     public void print3SpacesShouldReturn3Spaces(){
-        assertThat(Printer.printCharacterNTimes(3," "), is("   "));
+        assertThat(Printer.printCharacterNTimes(' ',3), is("   "));
     }
 }
