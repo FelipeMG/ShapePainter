@@ -9,18 +9,18 @@ The current shapes are: square, triangle and diamond.
 The default size of the shapes is 3.
 
 Shape.square(2):
-
+```
 **
 **
-
+```
 Shape.triangle():
-
+```
   *
  ***
 *****
-
+```
 Shape.diamond(4):
-
+```
    *
   ***
  *****
@@ -28,3 +28,4 @@ Shape.diamond(4):
  *****
   ***
    *
+```
